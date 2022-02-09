@@ -1,0 +1,148 @@
+<html>
+<head>
+
+<!-- fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@200;300;400;500;600;700;800&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- css -->
+
+<style>
+
+/* general styles */
+
+body {
+    background-color: #fdfff0;
+    color: #000006;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {padding: 0;margin: 0;}
+
+a {
+    color:rgb(105, 59, 59);
+    text-decoration: none;
+}
+
+a:hover, a:visited {color: black;}
+
+p {margin: 0 0 10px 0;letter-spacing: 0.5px;}
+
+/* header */
+
+#igem_bar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 20px;
+    background-color: black;
+    color: lightgray;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#igem_bar p {margin-top: 5px;margin-left: 5px;}
+
+#header {
+    width: calc(100% - 30px);
+    max-height: 70px;
+    position: fixed;
+    top: 20px;
+    left:0;
+    background-color: #ebd370;
+    padding:15px;
+    text-align: right;
+}
+
+.header_links {
+    list-style: none;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.header_links li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 1em;
+}
+
+/*
+.header_links li:last-of-type {margin-right: 20px;}*/
+
+#main {
+    margin: 100px auto;
+    width: 80%;
+}
+
+.text-sample {
+    margin: 0 0 100px 0;
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
+/* column code */
+.container {width:calc(50% - 40px);min-height: 100px;}
+.row {min-height:200px;display:inline-block;height:fit-content;margin-bottom:50px;}
+.cntr-1 {float:left;margin-right: 20px;}
+.cntr-2 {float:right;margin-left: 20px;}
+
+</style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+(function() {
+  // Bind Click event to the drop down navigation button
+  document.querySelector('.nav-button').addEventListener('click', function() {
+    /*  Toggle the CSS closed class which reduces the height of the UL thus 
+        hiding all LI apart from the first */
+    $(".drop").classList.toggle('closed')
+  }, false);
+})();
+
+</script>
+
+</head>
+<body>
+
+<!-- mock igem bar -->
+<nav id="igem_bar">
+    <p>iGEM</p>
+</nav>
+
+<!-- top navigation bar -->
+<nav id="header">
+    <ul class="header_links">
+        <li><a>Home</a></li>
+        <li><a>Wet Lab</a></li>
+        <li><a>Dry Lab</a></li>
+        <li><a>Human Practices</a></li>
+        <li><a>Team</a></li>
+    </ul>
+</nav>
+
+<!-- main content block -->
+<div id="main">
+    <article>
+    <h1>This is a big title.</h1>
+    <p>Some text.</p>
+    <h2>Yellow mug</h2>
+    <p>The time is seven eleven pm.</p>
+    <h3>What></h3>
+    </article>
+</div>
+
+<!--
+<img src="https://64.media.tumblr.com/4262d45a4f0aff02a3b5aadac1d2954c/9999b817f2ed0228-36/s1280x1920/b773ffed3cbac8306b8abb997147a6d0083bfe8a.jpg" class="headerimg">
+-->
+
+
+</div>
+
+</body></html>
