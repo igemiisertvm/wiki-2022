@@ -1,0 +1,395 @@
+<html>
+<head>
+
+<!-- fonts -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- css -->
+
+<style>
+
+/* general styles */
+
+body {
+    background-color: #fdfff0;
+    color: #000006;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {padding: 0;margin: 0;}
+
+a {
+    color:rgb(105, 59, 59);
+    text-decoration: none;
+    transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+}
+
+a:hover {
+    transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+}
+
+a:hover, a:visited {
+    color: black; 
+}
+
+p {margin: 0 0 10px 0;letter-spacing: 0.5px;}
+
+/* header */
+
+#header-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border-radius: 3px;
+}
+
+#header-icon img {
+    width:30px;
+    height:30px;
+}
+
+.header {
+    width: calc(100% - 30px);
+    height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ebd370;
+    padding:15px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.header_links {
+    list-style: none;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.header_links li {
+    display: inline;
+    margin-right: 30px;
+    font-size: 1em;
+    padding-bottom: 13px;
+    border-bottom: solid 3px #ebd370;
+    vertical-align: middle;
+    transition: all ease-in 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+}
+
+.header_links li:last-child {margin-right: 0px;}
+
+.header_links li:hover {
+    border-bottom: #000006 3px solid;
+    transition: all ease-in 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+}
+
+.nav-icon {display: none;}
+
+.drop-content {
+    position:absolute;
+    background-color: #ebd370;
+    z-index: 1;
+    border: #000006 1px solid;
+    display: none;
+    padding:7.5px 0;
+    transition: all ease-in 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+}
+
+#dbc1 {
+    position: fixed;
+    top: 50px;
+    right: 96px;
+    width: 175px;
+}
+
+#dbc2 {
+    position: fixed;
+    top: 50px;
+    right: 212px;
+    width: 175px;
+}
+
+#dbc3 {
+    position: fixed;
+    top: 50px;
+    right: 322px;
+    width: 175px;
+}
+
+.drop-content li {
+    padding: 7.5px 15px;
+    list-style: none;
+}
+
+.drop-show {
+    display: block;
+    transition: all ease-in 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+}
+
+@media screen and (max-width: 650px) {
+  .header_links li:last-child {margin-right: 30px;}  
+  .header_links li:not(:last-child) a {display: none;}
+  .nav-icon {
+    float: right;
+    display: block;
+  }
+
+  /* responsive */
+  .header.responsive {position: relative; height:175px;}
+  .header.responsive .nav-icon {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+  }
+  .header.responsive .header_links li a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* main body */
+
+#main {
+    margin: 100px auto;
+    width: 90%;
+}
+
+/* column code */
+.container {width:100%;min-height: 100px; background-color: #ebd370;}
+.row {min-height:200px;display:inline-block;height:fit-content;margin-bottom:50px;width:100%;}
+.cntr-1 {float:left; background-color: #fdfff0; width: 25%;min-width: 100px;}
+.cntr-2 {float:right; background-color: #fdfff0; width: 70%;}
+.cntr-small {float: left; width: 15%;}
+
+.content-header h1 {font-size: 10em; line-height: 1em; letter-spacing: -10px;}
+.content-header h4 {font-size: 4em; line-height: 1em; letter-spacing: -5px; font-weight: 300;}
+.content-header > .line {
+    width:100%;
+    height: 5px;
+    background-color: darkblue;
+    margin: 30px 0;
+}
+
+/* footer */
+
+.footer {
+    width: calc(100% - 60px);
+    height: 300px;
+    padding: 30px;
+    background-color: #ebd370;
+}
+
+.footer-logos {
+    margin-right: 120px;
+}
+
+.footer-logo-iiser {
+    max-width: 120px;
+    height: auto;
+}
+
+.footer-links {list-style: none;}
+.footer-links a {text-decoration: none; font-style: normal;}
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<!-- top navigation bar -->
+<nav id="header" class="header">
+    <ul class="header_links">
+        <li class="drop-button db1" onclick="dropButton(this)" id="db1"><a>Project &nbsp; <i class="fa fa-caret-down"></i></a>
+        <li class="drop-button db2" onclick="dropButton(this)" id="db2"><a>Dry Lab &nbsp; <i class="fa fa-caret-down"></i></a></li>
+        <li class="drop-button db3" onclick="dropButton(this)" id="db3"><a>Human Practices &nbsp; <i class="fa fa-caret-down"></i></a></li>
+        <li><a>Team</a></li>
+        <li class="nav-icon-c"><a href="javascript:void(0);" class="icon nav-icon" onclick="resHeader()">
+            <i class="fa fa-bars"></i>
+        </a></li>
+    </ul>
+</nav>
+
+<div id="header-icon">
+    <img src="https://cdn.icon-icons.com/icons2/2596/PNG/512/check_one_icon_155665.png">
+    <!-- REPLACE IMAGE -->
+</div>
+
+            <nav class="drop-container">
+                <div class="drop-content" id="dbc1">
+                    <ul>
+                        <li><a>Description</a></li>
+                        <li><a>Notebook</a></li>
+                        <li><a>Implementation</a></li>
+                    </ul>
+                </div>
+                <div class="drop-content" id="dbc2">
+                    <ul>
+                        <li><a>Modelling</a></li>
+                        <li><a>Lab notebook</a></li>
+                        <li><a>More</a></li>
+                        <li><a>IHP</a></li>
+                    </ul>
+                </div>
+                <div class="drop-content" id="dbc3">
+                    <ul>
+                        <li><a>Modelling</a></li>
+                        <li><a>Lab notebook</a></li>
+                    </ul>
+                </div>
+            </nav></li>
+
+<!-- main content block -->
+<div id="main">
+    <article class="full-block">
+        <div class="content-header">
+            <h1>Duonco</h1>
+            <h4>A novel drug delivery system that incorporates elements from chemotherapy and immunotherapy to target breast cancer</h4>
+            <div class="line"></div>
+        </div>
+    
+    </article>
+
+    <!--
+    <article class="container">
+        <div class="row">
+            <div class="cntr-1 cntr">
+                <h1>This is a big title.</h1>
+                <p>Some text.</p>      
+                Some text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet elit massa. Aliquam erat volutpat. Etiam facilisis ultricies pulvinar. Sed dignissim tristique augue, quis ultrices metus mattis sit amet. Phasellus elementum tellus nec dui pulvinar cursus. Duis eleifend, felis sed sagittis dictum, odio massa fermentum tellus, nec aliquet quam mauris sit amet orci. Vestibulum varius egestas dui et blandit. Ut urna ipsum, gravida eu sem quis, congue mollis est. Aenean bibendum auctor mi nec vehicula. Fusce tincidunt arcu pulvinar nibh auctor pharetra. Praesent molestie pharetra tortor in tempor. In vehicula lacinia magna vitae mattis. Maecenas consectetur mollis ante, ut blandit arcu blandit sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend in mi quis gravida. Curabitur tincidunt felis eget elit mollis, sed aliquet libero mattis. Duis iaculis est sed lacus sollicitudin viverra id posuere magna. Maecenas et leo mollis, rhoncus quam in, molestie odio. Nam et eges
+            </div> 
+            <div class="cntr-2 cntr">
+                <h1>This is a big title.</h1>
+                <p>Some text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet elit massa. Aliquam erat volutpat. Etiam facilisis ultricies pulvinar. Sed dignissim tristique augue, quis ultrices metus mattis sit amet. Phasellus elementum tellus nec dui pulvinar cursus. Duis eleifend, felis sed sagittis dictum, odio massa fermentum tellus, nec aliquet quam mauris sit amet orci. Vestibulum varius egestas dui et blandit. Ut urna ipsum, gravida eu sem quis, congue mollis est. Aenean bibendum auctor mi nec vehicula. Fusce tincidunt arcu pulvinar nibh auctor pharetra.
+
+                    Praesent molestie pharetra tortor in tempor. In vehicula lacinia magna vitae mattis. Maecenas consectetur mollis ante, ut blandit arcu blandit sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend in mi quis gravida. Curabitur tincidunt felis eget elit mollis, sed aliquet libero mattis. Duis iaculis est sed lacus sollicitudin viverra id posuere magna. Maecenas et leo mollis, rhoncus quam in, molestie odio. Nam et egestas magna. Aenean consequat erat a tortor porta, vitae fringilla sem viverra.</p>      
+            </div>       
+        </div>
+
+        <h2>Yellow mug</h2>
+        <p>The time is seven eleven pm.</p>
+        <h3>What></h3>
+    </article>
+-->
+</div>
+
+<!--
+<img src="https://64.media.tumblr.com/4262d45a4f0aff02a3b5aadac1d2954c/9999b817f2ed0228-36/s1280x1920/b773ffed3cbac8306b8abb997147a6d0083bfe8a.jpg" class="headerimg">
+-->
+
+<div id="footer" class="footer">
+    <article class="container">
+        <div class="row">
+            <div class="cntr cntr-small footer-logos">
+                <img src="https://www.iisertvm.ac.in/assets/images/iiser_logo.png" class="footer-logo-iiser">
+            </div>
+            <div class="cntr cntr-small">
+                <b>Project</b>
+                <ul class="footer-links">
+                    <li><a>Description</a></li>
+                    <li><a>Design</a></li>
+                    <li><a>Implementation</a></li>
+                </ul>
+            </div>
+            <div class="cntr cntr-small">
+                <b>Experiments</b>
+                <ul class="footer-links">
+                    <li><a>Egineering</a></li>
+                    <li><a>Results</a></li>
+                    <li><a>Lab Notebook</a></li>
+                    <li><a>Safety</a></li>
+                    <li><a>Modelling</a></li>
+                </ul>
+            </div>
+            <div class="cntr cntr-small">
+                <b>Group</b>
+                <ul class="footer-links">
+                    <li><a>Integrated HP</a></li>
+                    <li><a>Outreach Activities</a></li>
+                    <li><a>Education</a></li>
+                </ul>
+            </div>
+            <div class="cntr cntr-small">
+                <b>Team</b>
+                <ul class="footer-links">
+                    <li><a>Members</a></li>
+                    <li><a>Attributions</a></li>
+                    <li><a>Sponsors</a></li>
+                </ul>
+            </div>
+            <div class="cntr cntr-small">
+                <b>Project</b>
+                Some links
+            </div>
+        </div>
+    </article>
+</div>
+
+<!-- scripts -->
+
+<script type="text/javascript">
+function resHeader() {
+  var x = document.getElementById("header");
+  if (x.className === "header") {
+    x.className += " responsive";
+  } else {
+    x.className = "header";
+  }
+}
+
+function dropButton(btn) {
+    var x = document.getElementById("dbc1");
+    var y = document.getElementById("dbc2");
+    var z = document.getElementById("dbc3");
+
+    if (btn.id == "db1") {
+        var p = z;
+        var others = [x, y];
+    } else if (btn.id == "db2") {
+        var p = y;
+        var others = [x, z];
+    } else if (btn.id == "db3") {
+        var p = x;
+        var others = [z, y];
+    }
+
+    if (p.className === "drop-content") {
+        p.className += " drop-show";
+        for (var i of others) {
+            if (i.className != "drop-content") {
+                i.className = "drop-content";
+            }
+        }
+    } else {
+        p.className = "drop-content";
+    }
+}
+
+
+
+
+</script>
+
+
+</body></html>
